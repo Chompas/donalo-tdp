@@ -60,8 +60,14 @@ npm install -g grunt-cli
 ```
 Y volver a correr grunt serve
 
-## Ejemplos
+## Importante
+
+Para crear nuevos controllers, endpoints, etc,
 
 - [Crear un Endpoint](https://github.com/DaftMonk/generator-angular-fullstack#endpoint)
 - [Crear un Route](https://github.com/DaftMonk/generator-angular-fullstack#route)
 - [Crear un Controller](https://github.com/DaftMonk/generator-angular-fullstack#controller)
+
+Se pueden ver todos los tipos de generadores [aca](https://github.com/DaftMonk/generator-angular-fullstack#generators)
+
+Es importante usar el commando para que se generen los archivos correctamente y mantener la estructura del proyecto.
