@@ -71,3 +71,7 @@ Para crear nuevos controllers, endpoints, etc,
 Se pueden ver todos los tipos de generadores [aca](https://github.com/DaftMonk/generator-angular-fullstack#generators)
 
 Es importante usar el commando para que se generen los archivos correctamente y mantener la estructura del proyecto.
+
+## Sobre Jade
+
+Jade es un template engine que corre arriba de HTML y simplifica bastante el código ademas de complementarse bien con Angular http://jade-lang.com/
