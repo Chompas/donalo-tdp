@@ -1,0 +1,11 @@
+div(ng-include='"components/navbar/navbar.html"')
+.container
+  p
+    | Listado de campañas.
+  ul.list-group
+    li.list-group-item(ng-repeat='campaign in campaigns')
+      strong {{campaign.name}}
+      br
+      span.text-muted {{campaign.info}}
+      a.trash(ng-click='delete(campaign)')
+        span.glyphicon.glyphicon-trash.pull-right
