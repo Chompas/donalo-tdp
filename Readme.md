@@ -2,7 +2,7 @@
 
 Proyecto de donaciones para Taller de Desarrollo de Proyectos
 
-## Instalación
+## Instalación de dependencias
 
 - Instalar [mongodb](http://docs.mongodb.org/manual/installation/)
 - Instalar [NodeJS](http://nodejs.org/download/)
@@ -12,13 +12,13 @@ NodeJS trae npm para instalar dependencias.
 Instalar yo y bower.
 
 ```
-$ [sudo] npm install -g yo bower
+$ npm install -g yo bower
 ```
 
 Instalar [AngularJS Full-Stack generator](https://github.com/DaftMonk/generator-angular-fullstack)
 
 ```
-$ [sudo] npm install -g generator-angular-fullstack
+$ npm install -g generator-angular-fullstack
 ```
 
 El proyecto esta creado con
@@ -26,9 +26,39 @@ El proyecto esta creado con
 - Jade
 - CSS
 - ngRoute
-- MongoDB
+- MongoDB con Mongoose
+- Bootstrap
 - Boilerplate Authentication (Facebook)
 
+## Instalación del proyecto
+
+Dado que las dependencias que usa el proyecto estan en el .gitignore luego de clonarlo hacer
+
+```
+$ bower install
+$ npm install
+```
+
+## Correr servidor y proyecto
+
+Para correr el proyecto local se necesita tener corriendo mongo y grunt.
+
+En una terminal dejar corriendo primero
+
+```
+mongod
+```
+
+En otra
+```
+grunt serve
+```
+
+Si grunt da error hacer
+```
+npm install -g grunt-cli
+```
+Y volver a correr grunt serve
 
 ## Ejemplos
 
