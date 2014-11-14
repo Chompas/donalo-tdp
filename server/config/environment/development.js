@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/donalotdp-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };
