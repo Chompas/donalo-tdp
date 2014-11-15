@@ -8,11 +8,12 @@ angular.module('donaloTdpApp')
       $scope.submitted = true;
 
       if(form.$valid) {
+
         Campaign.save({
           name: $scope.campaign.name,
           info: $scope.campaign.info,
           campaignType: $scope.campaign.campaignType,
-          expired: $scope.campaign.expires,
+          expires: $scope.campaign.expires,
           active: false,
           totalAmount: $scope.campaign.totalAmount,
           currentAmount: 0,
