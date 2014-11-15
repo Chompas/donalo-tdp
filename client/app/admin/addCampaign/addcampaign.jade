@@ -2,7 +2,7 @@ div(ng-include='"components/navbar/navbar.html"')
 .container
   .row
     .col-sm-12
-      h1 Sign up
+      h1 Crear nueva campaña
     .col-sm-12
       form.form(name='form', ng-submit='addCampaign(form)', novalidate='')
         .form-group(ng-class='{ "has-success": form.name.$valid && submitted,\
@@ -12,33 +12,33 @@ div(ng-include='"components/navbar/navbar.html"')
           p.help-block(ng-show='form.name.$error.required && submitted')
             | Agregar un nombre
 
-        .form-group(ng-class='{ "has-success": form.info.$valid && submitted,\
-        "has-error": form.info.$invalid && submitted }')
-          label Descripción
-          input.form-control(type='text', name='info', ng-model='campaign.info', required='', mongoose-error='')
-          p.help-block(ng-show='form.info.$error.required && submitted')
-            | Agregar una descripción
-
-        .form-group(ng-class='{ "has-success": form.campaignType.$valid && submitted,\
-        "has-error": form.campaignType.$invalid && submitted }')
-          label Tipo de Campaña
-          input.form-control(type='text', name='campaignType', ng-model='campaign.campaignType', required='', mongoose-error='')
-          p.help-block(ng-show='form.campaignType.$error.required && submitted')
-            | Elegir un tipo de campaña
-            
-        .form-group(ng-class='{ "has-success": form.expires.$valid && submitted,\
-        "has-error": form.expires.$invalid && submitted }')
-          label Fecha de Finalización
-          input.form-control(type='datetime-local', name='expires', ng-model='campaign.expires', required='', mongoose-error='')
-          p.help-block(ng-show='form.expires.$error.required && submitted')
-            | Elegir una fecha de finalización
-            
-        .form-group(ng-class='{ "has-success": form.totalAmount.$valid && submitted,\
-        "has-error": form.totalAmount.$invalid && submitted }')
-          label Monto
-          input.form-control(type='text', name='totalAmount', ng-model='campaign.totalAmount', required='', mongoose-error='')
-          p.help-block(ng-show='form.totalAmount.$error.required && submitted')
-            | Elegir un monto
+        //- .form-group(ng-class='{ "has-success": form.info.$valid && submitted,\
+        //- "has-error": form.info.$invalid && submitted }')
+        //-   label Descripción
+        //-   input.form-control(type='text', name='info', ng-model='campaign.info', required='', mongoose-error='')
+        //-   p.help-block(ng-show='form.info.$error.required && submitted')
+        //-     | Agregar una descripción
+        //- 
+        //- .form-group(ng-class='{ "has-success": form.campaignType.$valid && submitted,\
+        //- "has-error": form.campaignType.$invalid && submitted }')
+        //-   label Tipo de Campaña
+        //-   input.form-control(type='text', name='campaignType', ng-model='campaign.campaignType', required='', mongoose-error='')
+        //-   p.help-block(ng-show='form.campaignType.$error.required && submitted')
+        //-     | Elegir un tipo de campaña
+        //-     
+        //- .form-group(ng-class='{ "has-success": form.expires.$valid && submitted,\
+        //- "has-error": form.expires.$invalid && submitted }')
+        //-   label Fecha de Finalización
+        //-   input.form-control(type='datetime-local', name='expires', ng-model='campaign.expires', required='', mongoose-error='')
+        //-   p.help-block(ng-show='form.expires.$error.required && submitted')
+        //-     | Elegir una fecha de finalización
+        //-     
+        //- .form-group(ng-class='{ "has-success": form.totalAmount.$valid && submitted,\
+        //- "has-error": form.totalAmount.$invalid && submitted }')
+        //-   label Monto
+        //-   input.form-control(type='text', name='totalAmount', ng-model='campaign.totalAmount', required='', mongoose-error='')
+        //-   p.help-block(ng-show='form.totalAmount.$error.required && submitted')
+        //-     | Elegir un monto
 
 
         div

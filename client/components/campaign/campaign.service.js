@@ -2,7 +2,7 @@
 
 angular.module('donaloTdpApp')
   .factory('Campaign', function ($resource) {
-    return $resource("/api/campaigns/:id", { id: "@_id" },
+    var campaign = $resource("/api/campaigns/:id", { id: "@_id" },
         {
           'create':  { method: 'POST' },
           'index':   { method: 'GET', isArray: true },
@@ -11,4 +11,6 @@ angular.module('donaloTdpApp')
           'destroy': { method: 'DELETE' }
         }
       );
+
+      return campaign;
   });

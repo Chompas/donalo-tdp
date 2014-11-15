@@ -14,5 +14,9 @@ angular.module('donaloTdpApp')
       .when('/admin/campaigns', {
         templateUrl: 'app/admin/campaigns/campaigns.html',
         controller: 'CampaignsCtrl'
+      })
+      .when('/admin/addCampaign', {
+        templateUrl: 'app/admin/addCampaign/addcampaign.html',
+        controller: 'AddcampaignCtrl'
       });
   });

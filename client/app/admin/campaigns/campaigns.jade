@@ -1,7 +1,10 @@
 div(ng-include='"components/navbar/navbar.html"')
 .container
   p
-    | Listado de campañas.
+    a.btn.btn-default.btn-lg.btn-register(href='/admin/addCampaign')
+      | Crear Campaña
+  h2
+    | Listado de campañas
   ul.list-group
     li.list-group-item(ng-repeat='campaign in campaigns')
       strong {{campaign.name}}

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('AddcampaignCtrl', function ($scope, Campaign) {
+  .controller('AddcampaignCtrl', function ($scope, $location, Campaign) {
     $scope.errors = {};
 
     $scope.addCampaign = function(form) {
@@ -17,20 +17,9 @@ angular.module('donaloTdpApp')
           totalAmount: $scope.campaign.totalAmount,
           currentAmount: 0,
           created: Date.now()
-        })
-        .then( function() {
-          // Account created, redirect to home
-          $location.path('/');
-        })
-        .catch( function(err) {
-          err = err.data;
-          $scope.errors = {};
-
-          // Update validity of form fields that match the mongoose errors
-          angular.forEach(err.errors, function(error, field) {
-            form[field].$setValidity('mongoose', false);
-            $scope.errors[field] = error.message;
-          });
+        }, function() {
+          // Account created, redirect to campaign list
+          $location.path('admin/campaigns');
         });
       }
     };
