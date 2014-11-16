@@ -20,4 +20,10 @@ angular.module('donaloTdpApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+
+    $scope.searchMessage = "Buscar campañas...";
+    $scope.search = function(form) {
+      $scope.menu = $scope.searchText;
+    };
   });
