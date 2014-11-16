@@ -2,8 +2,7 @@
 
 angular.module('donaloTdpApp')
   .controller('ContactCtrl', function ($scope) {
-    $scope.message = 'Hello';
     $scope.contact = function(form) {
-    	$scope.message = 'Bye';
+    	//TODO: Send info to admin
     };
   });

@@ -24,6 +24,6 @@ angular.module('donaloTdpApp')
 
     $scope.searchMessage = "Buscar campañas...";
     $scope.search = function(form) {
-      $scope.menu = $scope.searchText;
+      // TODO: Search for campaign
     };
   });
