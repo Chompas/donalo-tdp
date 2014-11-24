@@ -8,7 +8,7 @@ angular.module('donaloTdpApp')
           'index':   { method: 'GET', isArray: true },
           'show':    { method: 'GET', isArray: false },
           'update':  { method: 'PUT' },
-          'destroy': { method: 'DELETE' }
+          'destroy': { method: 'DELETE' },
         }
       );
 
