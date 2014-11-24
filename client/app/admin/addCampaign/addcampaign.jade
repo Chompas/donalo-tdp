@@ -11,6 +11,13 @@ div(ng-include='"components/navbar/navbar.html"')
           input.form-control(type='text', name='name', ng-model='campaign.name', required='')
           p.help-block(ng-show='form.name.$error.required && submitted')
             | Agregar un nombre
+        
+        .form-group(ng-class='{ "has-success": form.image.$valid && submitted,\
+        "has-error": form.image.$invalid && submitted }')
+          label Imagen
+          input.form-control(type='text', name='image', ng-model='campaign.imageUrl', required='')
+          p.help-block(ng-show='form.image.$error.required && submitted')
+              | Agregar una url de imagen
 
         .form-group(ng-class='{ "has-success": form.info.$valid && submitted,\
         "has-error": form.info.$invalid && submitted }')
@@ -18,6 +25,13 @@ div(ng-include='"components/navbar/navbar.html"')
           input.form-control(type='text', name='info', ng-model='campaign.info', required='', mongoose-error='')
           p.help-block(ng-show='form.info.$error.required && submitted')
             | Agregar una descripción
+        
+        .form-group(ng-class='{ "has-success": form.image.$valid && submitted,\
+        "has-error": form.image.$invalid && submitted }')
+            label Dirección
+            input.form-control(type='text', name='address', ng-model='campaign.address', required='')
+            p.help-block(ng-show='form.address.$error.required && submitted')
+              | Agregar una dirección
         
         .form-group(ng-class='{ "has-success": form.campaignType.$valid && submitted,\
         "has-error": form.campaignType.$invalid && submitted }')

@@ -11,7 +11,9 @@ angular.module('donaloTdpApp')
 
         Campaign.save({
           name: $scope.campaign.name,
+          imageUrl: $scope.campaign.imageUrl,
           info: $scope.campaign.info,
+          address: $scope.campaign.address,
           campaignType: $scope.campaign.campaignType,
           expires: $scope.campaign.expires,
           active: false,
