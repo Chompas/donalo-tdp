@@ -2,9 +2,28 @@
 
 angular.module('donaloTdpApp')
   .controller('DetailsCtrl', function ($scope, $routeParams, Campaign, User) {
-    var campaigns = Campaign.query({_id: $routeParams.id});
-    $scope.campaign = campaigns[0];
-    var user = User.query({_id: campaigns[0].userId});
-    $scope.user = user[0];
-    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    var campaign = Campaign.show({id: $routeParams.id});
+    campaign.$promise.then(function(data){
+      var expire = new Date(data.expires);
+      var now = new Date();
+      var diff =  Math.abs(expire - now);
+
+      var seconds = Math.floor(diff/1000); //ignore any left over units smaller than a second
+      var minutes = Math.floor(seconds/60);
+      seconds = seconds % 60;
+      var hours = Math.floor(minutes/60);
+      minutes = minutes % 60;
+
+      if(Math.floor(hours/24)>0) {
+        $scope.expire = Math.floor(hours/24) + " dias";
+      } else {
+        $scope.expire = hours + " horas " + minutes + " minutos ";
+      }
+      $scope.campaign = data;
+      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+      // var user = User.show({id: data.userId});
+      // user.$promise.then(function(userData){
+      //   $scope.user = userData;
+      // });
+    });
   });
