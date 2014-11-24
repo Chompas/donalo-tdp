@@ -11,7 +11,8 @@ var CampaignSchema = new Schema({
   campaignType: Number,
   totalAmount: Number,
   currentAmount: Number,
-  active: Boolean
+  active: Boolean,
+  userId: Number
 });
 
 module.exports = mongoose.model('Campaign', CampaignSchema);

@@ -24,6 +24,8 @@
       <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/contact/contact.css">
+      <link rel="stylesheet" href="app/main/campaigns/details/details.css">
+      <link rel="stylesheet" href="app/main/campaigns/list/list.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="components/modal/modal.css">
       <link rel="stylesheet" href="components/navbar/navbar.css">
@@ -48,7 +50,7 @@
       ga('create', 'UA-XXXXX-X');
       ga('send', 'pageview');
     </script>
-
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -63,6 +65,7 @@
       <script src="bower_components/angular-route/angular-route.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,6 +83,10 @@
           <script src="app/admin/users/users.controller.js"></script>
           <script src="app/contact/contact.controller.js"></script>
           <script src="app/contact/contact.js"></script>
+          <script src="app/main/campaigns/details/details.controller.js"></script>
+          <script src="app/main/campaigns/details/details.js"></script>
+          <script src="app/main/campaigns/list/list.controller.js"></script>
+          <script src="app/main/campaigns/list/list.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="components/auth/auth.service.js"></script>
