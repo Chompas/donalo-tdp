@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, NavbarSearch) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
@@ -23,6 +23,7 @@ angular.module('donaloTdpApp')
 
 
     $scope.searchMessage = "Buscar campañas...";
+    $scope.data = NavbarSearch;
     $scope.search = function(form) {
       // TODO: Search for campaign
     };

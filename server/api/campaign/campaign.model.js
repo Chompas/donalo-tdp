@@ -6,6 +6,8 @@ var mongoose = require('mongoose'),
 var CampaignSchema = new Schema({
   name: String,
   info: String,
+  imageUrl: String,
+  address: String,
   created: Date,
   expires: Date,
   campaignType: Number,

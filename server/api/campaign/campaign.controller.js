@@ -54,6 +54,14 @@ exports.destroy = function(req, res) {
   });
 };
 
+exports.randomCampaign = function(req, res) {
+  Campaign.findOne({'campaignType':req.params.campaignType}, function (err, campaign) {
+    if(err) { return handleError(res, err); }
+    if(!campaign) { return res.send(404); }
+    return res.json(campaign);
+  });
+};
+
 function handleError(res, err) {
   return res.send(500, err);
 }
