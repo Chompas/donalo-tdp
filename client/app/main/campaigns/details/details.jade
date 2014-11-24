@@ -7,7 +7,7 @@ div(ng-include='"components/navbar/navbar.html"')
       .col-lg-1
       .col-lg-10(class='containerStyles')
         .col-lg-9
-          img.fit(alt='Cats Paying Dues in their last show Echoes In Time', src='https://s3.amazonaws.com/ksr/assets/002/691/240/1adae54c6a6254d651c8ba5a8482e022_large.jpg?1412476580')
+          img.fit(alt='{{campaign.name}}', src='{{campaign.imageUrl}}')
         .col-lg-3
           h2 #Backers
           h4 Backers
@@ -16,13 +16,14 @@ div(ng-include='"components/navbar/navbar.html"')
           .progress
             .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
                 span.sr-only 40% Complete
-          h2 #horas
-          h4 horas faltantes
+          <timer end-time={{campaign.expires}}>{{days}} dias, {{hours}} horas, {{minutes}} minutos, {{seconds}} segundos</timer>
+          h4 para terminar la campaña
 
           btn.btn-warning.btn-lg.btn-block(type='button') Doná
         .col-lg-9
           h2 Detalles de la campaña
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum fringilla arcu in fringilla. Donec rutrum mattis dictum. Fusce ut sem euismod, consequat felis vitae, condimentum est. Sed laoreet quis leo vel blandit. Vestibulum ut lectus vitae ex fringilla molestie. Nunc porttitor quam ligula, ac varius ipsum eleifend nec. Suspendisse efficitur, tortor a commodo finibus, est nibh placerat enim, vitae feugiat lacus magna suscipit turpis. Sed nec mattis lorem. Fusce mauris tortor, lacinia eget purus tempor, aliquet blandit felis. Maecenas faucibus sed diam et lobortis. Etiam maximus efficitur ex, non elementum ante suscipit ut. Maecenas sollicitudin, magna ultricies bibendum congue, diam magna lobortis mi, non malesuada lectus felis imperdiet odio. Vestibulum maximus turpis at sollicitudin consequat. Nullam maximus tincidunt risus, eget hendrerit arcu. Morbi quis commodo turpis. Integer dignissim orci id ante hendrerit facilisis et facilisis justo. Suspendisse vulputate leo et ante porta fermentum. Nam dapibus commodo massa vel iaculis. Nulla varius viverra nunc. Suspendisse ultricies porta eleifend. Mauris tincidunt sit amet est in facilisis. Nullam et nisi congue, hendrerit odio a, facilisis libero. Cras at leo nunc. In hac habitasse platea dictumst. Vivamus at est at lectus fermentum luctus eu sed ante. Donec consectetur lacus sed sem fringilla, quis vestibulum leo varius. Aenean vestibulum vitae metus vitae varius.
+          p {{campaign.info}}
+
         .col-lg-3
           h2 Mapa
           <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>

@@ -2,9 +2,9 @@
 
 angular.module('donaloTdpApp')
   .controller('DetailsCtrl', function ($scope, $routeParams, Campaign, User) {
-    var campaign = Campaign.query({_id: $routeParams.id});
-    var user = User.query({_id: campaign.userId});
-    $scope.campaign = campaign;
-    $scope.user = user;
+    var campaigns = Campaign.query({_id: $routeParams.id});
+    $scope.campaign = campaigns[0];
+    var user = User.query({_id: campaigns[0].userId});
+    $scope.user = user[0];
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   });
