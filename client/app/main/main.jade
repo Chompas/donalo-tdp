@@ -2,15 +2,11 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    .row
+    .row(ng-repeat="campaign in campaigns")
       .col-md-9
+        | {{campaign.name}}
       .col-md-3
-    .row
-      .col-md-9
-      .col-md-3
-    .row
-      .col-md-9
-      .col-md-3
+        | {{campaign.totalAmount}}
 
 
         
