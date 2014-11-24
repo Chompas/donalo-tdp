@@ -5,7 +5,9 @@ angular.module('donaloTdpApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'uiGmapgoogle-maps',
+  'timer'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

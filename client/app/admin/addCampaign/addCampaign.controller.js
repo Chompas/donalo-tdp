@@ -19,6 +19,7 @@ angular.module('donaloTdpApp')
           active: false,
           totalAmount: $scope.campaign.totalAmount,
           currentAmount: 0,
+          userId: "5473a4719b46816816ec0486",
           created: Date.now()
         }, function() {
           // Account created, redirect to campaign list
