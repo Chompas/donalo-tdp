@@ -19,7 +19,7 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
       .col-sm-5.col-md-5
           form.navbar-form(name='searchForm', role='search', ng-submit='search(searchForm)')
               .input-group
-                input#srch-term.form-control(type='text', placeholder='{{searchMessage}}', name='search', ng-model='searchText')
+                input#srch-term.form-control(type='text', placeholder='{{searchMessage}}', name='search', ng-model='data.text')
                 .input-group-btn
                   button.btn.btn-default(type='submit')
                     i.glyphicon.glyphicon-search
