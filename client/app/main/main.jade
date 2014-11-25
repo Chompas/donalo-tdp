@@ -2,18 +2,35 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    .row(ng-repeat="campaign in campaigns")
+    .row.campaignTypeRow(ng-repeat="campaign in campaigns")
       .col-md-9
-        | {{campaign.name}}
-      .col-md-3
-        .col-md-1
-        .col-md-7
-          img.fit(alt='{{campaign.name}}', src='{{campaign.imageUrl}}')
-          .progress
-            .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 10%;')
-        .col-md-3
-          | {{campaign.currentAmount | currency}} de {{campaign.totalAmount | currency}}
-        .col-md-1
+        .col-sm-4
+          img.fit.img-responsive(alt='', ng-src="img/donar.png")
+        .col-sm-2
+          img.fit.img-responsive(alt='', ng-src="img/donar.png")
+        .col-sm-4
+          img.fit.img-responsive(alt='', ng-src="img/donar.png")
+        .col-sm-2
+          | {{getTitle(campaign.campaignType)}}
+      .col-md-3.campaignInfo
+        .row
+          .col-md-12
+            | {{campaign.name}}
+         .row 
+          .col-md-1
+          .col-md-6
+            .row
+              img.fit.img-responsive.img-thumbnail(alt='{{campaign.name}}', ng-src='{{campaign.imageUrl}}', err-src="img/donar.png")
+            .row
+              .progress
+                  .progress-bar.progress-bar-warning(ng-style='setWidth(campaign)', aria-valuemax='100', aria-valuemin='0', aria-valuenow='{{(campaign.currentAmount + 20) / campaign.totalAmount * 100 | number:0}}', role='progressbar')
+
+          .col-md-4
+            .row
+              .row {{campaign.currentAmount | currency}} 
+              .row de 
+              .row {{campaign.totalAmount | currency}}
+          .col-md-1
 
 
         
