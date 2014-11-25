@@ -25,9 +25,10 @@ angular.module('donaloTdpApp')
       $scope.campaign = data;
 
       $.getJSON('http://maps.google.com/maps/api/geocode/json?address='+directions, function(data){
-        var location = data.results[0].geometry.location;
-        //TODO que el scope pase a jade
-        $scope.map  = { center: { latitude: location.lat, longitude: location.lng }, zoom: 8 };
+        $scope.$apply(function(){
+          var location = data.results[0].geometry.location;
+          $scope.map  = { center: { latitude: location.lat, longitude: location.lng }, zoom: 18 };
+        });
       });
 
       // var user = User.show({id: data.userId});
