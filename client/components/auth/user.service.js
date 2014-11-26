@@ -6,6 +6,7 @@ angular.module('donaloTdpApp')
       id: '@_id'
     },
     {
+      show:    { method: 'GET', isArray: false },
       changePassword: {
         method: 'PUT',
         params: {

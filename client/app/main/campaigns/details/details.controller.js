@@ -31,9 +31,9 @@ angular.module('donaloTdpApp')
         });
       });
 
-      // var user = User.show({id: data.userId});
-      // user.$promise.then(function(userData){
-      //   $scope.user = userData;
-      // });
+      var user = User.show({id: data.userId});
+      user.$promise.then(function(userData){
+        $scope.user = userData;
+      });
     });
   });
