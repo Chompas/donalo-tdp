@@ -14,10 +14,15 @@ angular.module('donaloTdpApp')
     	return {width: $scope.campaignWidth};
     };
 
-    $scope.campaignTitles = ['Tipo 0','Tipo 1','Tipo 2'];
+    $scope.campaignTitles = ['dinero','bienes','materiales'];
+    $scope.campaignImages = ['dolar.png','lata.png','hombre.png'];
 
     $scope.getTitle = function (campaignType) {
-    	return $scope.campaignTitles[campaignType];
+    	return "Ver más campañas que necesitan " + $scope.campaignTitles[campaignType];
+    };
+
+    $scope.getCampaignImage = function (campaignType) {
+      return "img/" + $scope.campaignImages[campaignType];
     };
 
   })

@@ -3,16 +3,16 @@ div(ng-include='"components/navbar/navbar.html"')
 header#banner.hero-unit
   .container
     .row.campaignTypeRow(ng-repeat="campaign in campaigns")
-      .col-md-9
-        .col-sm-4
+      .col-md-8.campaignButtons
+        .col-sm-3
           img.fit.img-responsive(alt='', ng-src="img/donar.png")
-        .col-sm-2
-          img.fit.img-responsive(alt='', ng-src="img/donar.png")
-        .col-sm-4
-          img.fit.img-responsive(alt='', ng-src="img/donar.png")
-        .col-sm-2
-          | {{getTitle(campaign.campaignType)}}
-      .col-md-3.campaignInfo
+        .col-sm-3
+          img.fit.img-responsive(alt='', ng-src="img/flecha.jpg")
+        .col-sm-3
+          img.fit.img-responsive(alt='', ng-src="{{getCampaignImage(campaign.campaignType)}}")
+        .col-sm-3
+          a(ng-href="campaigns/list") {{getTitle(campaign.campaignType)}}
+      .col-md-4.campaignInfo
         .row
           .col-md-12
             | {{campaign.name}}
@@ -20,22 +20,17 @@ header#banner.hero-unit
           .col-md-1
           .col-md-6
             .row
-              img.fit.img-responsive.img-thumbnail(alt='{{campaign.name}}', ng-src='{{campaign.imageUrl}}', err-src="img/donar.png")
+              img.fit.img-responsive.img-thumbnail.campaignThumbnail(alt='{{campaign.name}}', ng-src='{{"img/" + campaign.imageUrl}}', err-src="img/donar.png")
             .row
               .progress
                   .progress-bar.progress-bar-warning(ng-style='setWidth(campaign)', aria-valuemax='100', aria-valuemin='0', aria-valuenow='{{(campaign.currentAmount + 20) / campaign.totalAmount * 100 | number:0}}', role='progressbar')
 
           .col-md-4
             .row
-              .row {{campaign.currentAmount | currency}} 
+              .row {{campaign.currentAmount | currency:undefined:0}} 
               .row de 
-              .row {{campaign.totalAmount | currency}}
+              .row {{campaign.totalAmount | currency:undefined:0}}
           .col-md-1
-
-
-        
-
-
 
 
 footer.footer

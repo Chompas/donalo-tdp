@@ -25,7 +25,6 @@
 .footer {
     text-align: center;
     padding: 30px 0;
-    margin-top: 70px;
     border-top: 1px solid #E5E5E5;
 }
 
@@ -33,6 +32,15 @@
     border-bottom: 1px solid black;
 }
 
+.campaignButtons {
+    padding-top: 30px;
+}
+
 .campaignInfo {
     border-left: 1px solid black;
+    padding-top: 30px;
+}
+
+.campaignThumbnail {
+    max-height: 100px;
 }
