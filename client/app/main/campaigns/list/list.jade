@@ -1,2 +1,22 @@
-.col-md-12
-    | This is the list view.
+div(ng-include='"components/navbar/navbar.html"')
+.tab-wrapper
+  tabset
+    tab(ng-repeat="tipo in campaignType", heading="{{tipo}}" select='active($index)')
+      .campaign-wrapper
+        .row.campaign-list(ng-repeat="campaign in campaigns | filter:{campaignType:$index}")
+          .col-border.col-md-6
+            .img-wrapper
+              img(ng-src="{{campaign.imageUrl}}")
+            .progress
+              .progress-bar(role="progressbar",aria-valuenow="{{campaigns.progress(campaign)}}",aria-valuemin="0",aria-valuemax=100,style="width: {{campaigns.progress(campaign)}}") {{campaigns.progress(campaign)}}%
+            .descripcion {{campaign.info}}
+          .col-md-3.donacion-info-wrapper
+            .donacion-info
+              span.recaudado ${{campaign.currentAmount}}
+              span.tope de ${{campaign.totalAmount}}
+          .col-md-3.donar
+            button(type="button",class="btn btn-warning btn-lg") Doná
+        .row.campaign-list.empty(ng-hide="(campaigns | filter:{campaignType: $index}).length") No hay campañas de este tipo
+        .maps
+          ui-gmap-google-map(id='maps-{{$index}}',zoom='maps[$index].zoom',center='maps[$index].center')
+            ui-gmap-markers(models="markers[$index]", coords="'coords'",idkey="'id'")

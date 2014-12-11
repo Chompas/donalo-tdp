@@ -1,0 +1,86 @@
+.tab-wrapper{
+
+  margin: 0 0 0 16px;
+}
+.campaign-wrapper{
+
+  position: relative;
+
+
+}
+.campaign-list{
+
+  width: 40%;
+  border: 1px solid;
+  min-height: 120px;
+}
+
+.campaign-list.empty{
+
+  line-height: 120px;
+  text-align: center;
+  border: 0px;
+}
+
+.campaign-list .img-wrapper{
+
+  width: 100%;
+  margin: 10px 0px;
+  text-align: center;
+}
+
+.campaign-list .img-wrapper img{
+  max-width: 150px;
+  max-height: 150px;
+  margin: 10px 20px;
+}
+
+.campaign-list .progress{
+  margin: 10px 20px;
+
+}
+
+.campaign-list .progress-bar{
+
+  width: 60%;
+
+}
+
+.campaign-wrapper .maps{
+
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.campaign-wrapper .maps .angular-google-map-container {
+  height: 800px;
+
+}
+
+.campaign-wrapper .donacion-info{
+
+  margin: 80px 0px;
+  text-align: center;
+
+}
+
+.donacion-info .recaudado{
+
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.campaign-list .descripcion{
+  width: 60%;
+  margin: 10px 20px;
+
+}
+
+.campaign-wrapper .donar{
+
+  line-height: 226px;
+}
