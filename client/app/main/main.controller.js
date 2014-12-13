@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('MainCtrl', function ($scope, $http, RandomCampaign) {
+  .controller('MainCtrl', function ($scope, $http, $location, RandomCampaign) {
   	$scope.campaigns = [];
   	$scope.campaigns.push(RandomCampaign.randomCampaign({type:0}));
   	$scope.campaigns.push(RandomCampaign.randomCampaign({type:1}));
@@ -29,7 +29,11 @@ angular.module('donaloTdpApp')
     };
 
     $scope.getCampaignImage = function (campaignType) {
-      return "img/" + $scope.campaignImages[campaignType];
+      return "assets/images/" + $scope.campaignImages[campaignType];
+    };
+
+    $scope.go = function ( path ) {
+      $location.path( path );
     };
 
   })

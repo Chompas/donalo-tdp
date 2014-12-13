@@ -1,3 +1,55 @@
+/******* FONTS ******/
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(/assets/fonts/BebasNeue_0.otf);
+}
+@font-face {
+    font-family: calibri;
+    src: url(/fonts/calibri_0.ttf);
+}
+@font-face {
+    font-family: Calibri Bold;
+    src: url(/fonts/Calibri Bold.ttf);
+}
+@font-face {
+    font-family: Calibri Italic;
+    src: url(/fonts/Calibri Italic.ttf);
+}
+@font-face {
+    font-family: calibril;
+    src: url(/fonts/calibril.ttf);
+}
+@font-face {
+    font-family: calibrili;
+    src: url(/fonts/calibrili.ttf);
+}
+@font-face {
+    font-family: calibriz;
+    src: url(/fonts/calibriz_0.ttf);
+}
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url(/fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(/fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(/fonts/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(/fonts/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(/fonts/Oswald-Regular.ttf);
+}
+
+
 .thing-form {
     margin: 20px 0;
 }
@@ -75,7 +127,7 @@
 }
 
 .centralImageContainer {
-    padding: 0 75px;
+    padding-right: 75px;
 }
 
 .centralImage {
@@ -94,4 +146,55 @@
 .progressBarContainer {
     background-color: #ffba00;
     height: 20px;
+}
+
+/***** BUTTON COLORS ******/
+
+.listButton {
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 15px;
+    background-color: #43c0b5;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+ 
+.listButton:hover, 
+.listButton:focus, 
+.listButton:active, 
+.listButton.active, 
+.open .dropdown-toggle.listButton { 
+    background-color: #ffffff;
+    border-color: #43c0b5;
+    color: #43c0b5;
+} 
+ 
+.listButton:active, 
+.listButton.active, 
+.open .dropdown-toggle.listButton { 
+  background-image: none; 
+} 
+ 
+.listButton.disabled, 
+.listButton[disabled], 
+fieldset[disabled] .listButton, 
+.listButton.disabled:hover, 
+.listButton[disabled]:hover, 
+fieldset[disabled] .listButton:hover, 
+.listButton.disabled:focus, 
+.listButton[disabled]:focus, 
+fieldset[disabled] .listButton:focus, 
+.listButton.disabled:active, 
+.listButton[disabled]:active, 
+fieldset[disabled] .listButton:active, 
+.listButton.disabled.active, 
+.listButton[disabled].active, 
+fieldset[disabled] .listButton.active { 
+  background-color: #43C0B5; 
+  border-color: #FFFFFF; 
+} 
+ 
+.listButton .badge { 
+  color: #43C0B5; 
+  background-color: #ffffff; 
 }

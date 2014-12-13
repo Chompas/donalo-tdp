@@ -1,10 +1,11 @@
 div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit.content
-  .row.centralContent
-    .col-md-6.centralImageContainer
-      img.fit.img-responsive.centralImage(alt='', ng-src="img/hand.png")
-    .col-md-6.centralText
+  .centralContent
+    .col-md-1
+    .col-md-5.centralImageContainer
+      img.fit.img-responsive.centralImage(alt='', ng-src="assets/images/hand.png")
+    .col-md-5.centralText
       h1 DONAR
       p 
       | Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan 
@@ -13,13 +14,16 @@ header#banner.hero-unit.content
       | senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, 
       | vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. 
       | In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+      button.listButton.btn(type='button',ng-click="go('/campaigns/list')")
+        |  VER OTRAS CAMPAÑAS QUE NECESITAN DINERO
+    .col-md-1
 
-  .row.featureCampaignsContainer
+  .featureCampaignsContainer
     .col-sm-4.featureCampaign(ng-repeat="campaign in campaigns")
       .row.featureCampaignData 
         .col-md-7(style="height:100%;")
           .row(style="height:100%;")
-            img.fit.img-responsive.campaignThumbnail(alt='{{campaign.name}}', ng-src='{{"img/" + campaign.imageUrl}}', err-src="img/dona_icon.png")
+            img.fit.img-responsive.campaignThumbnail(alt='{{campaign.name}}', ng-src='{{"assets/images/" + campaign.imageUrl}}', err-src="assets/images/dona_icon.png")
         .col-md-5
           .row
             .row {{campaign.name}}
