@@ -7,7 +7,8 @@ angular.module('donaloTdpApp', [
   'ngRoute',
   'ui.bootstrap',
   'uiGmapgoogle-maps',
-  'timer'
+  'timer',
+  'highcharts-ng'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
