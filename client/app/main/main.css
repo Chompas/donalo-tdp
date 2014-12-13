@@ -25,7 +25,6 @@
 .footer {
     text-align: center;
     line-height: 50px;
-    border-top: 1px solid #E5E5E5;
     background-color:#ffba00;
     color:#ffffff;
 }
@@ -44,7 +43,8 @@
 }
 
 .campaignThumbnail {
-    max-height: 100px;
+    height: 100%;
+    padding:10px;
 }
 
 /*ADDED AFTER*/
@@ -54,14 +54,44 @@
 }
 
 .centralContent {
-    padding: 0 130px;
+    padding: 50px 130px;
+    height: 380px;
 }
 
-.featureCampaigns {
+.featureCampaignsContainer {
     background-color: #ffffff;
     padding: 0 130px;
+    margin-bottom: 30px;
+    height: 235px;
+}
+
+.featureCampaign{
+    padding: 10px 25px;
+    height: 100%;
+}
+
+.featureCampaignData {
+    height: 175px;
+}
+
+.centralImageContainer {
+    padding: 0 75px;
 }
 
 .centralImage {
-    padding: 50px 75px;
+    margin: auto;
+}
+
+.centralText {
+    text-align: left;
+    color:#ffffff;
+}
+
+.campaignProgressBar {
+    background-color:#f16856;
+}
+
+.progressBarContainer {
+    background-color: #ffba00;
+    height: 20px;
 }

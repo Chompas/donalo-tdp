@@ -3,15 +3,22 @@
 angular.module('donaloTdpApp')
   .controller('MainCtrl', function ($scope, $http, RandomCampaign) {
   	$scope.campaigns = [];
-	$scope.campaigns.push(RandomCampaign.randomCampaign({type:0}));
-	$scope.campaigns.push(RandomCampaign.randomCampaign({type:1}));
-	$scope.campaigns.push(RandomCampaign.randomCampaign({type:2}));
+  	$scope.campaigns.push(RandomCampaign.randomCampaign({type:0}));
+  	$scope.campaigns.push(RandomCampaign.randomCampaign({type:1}));
+  	$scope.campaigns.push(RandomCampaign.randomCampaign({type:2}));
 
-        //    span {{(campaign.currentAmount) / campaign.totalAmount * 100 | number:0}}% Complete
+    // HARCODED IMAGES!!!!!
+    $scope.campaigns[0].imageUrl = "dona_icon3.png";
+    $scope.campaigns[1].imageUrl = "dona_icon.png";
+    $scope.campaigns[2].imageUrl = "dona_icon2.png";
+
+
+    $scope.getWidth = function (campaign) {
+      return (campaign.currentAmount / campaign.totalAmount * 100) + '%';
+    }
+
     $scope.setWidth = function (campaign) {
-    	$scope.campaignWidth = (campaign.currentAmount / campaign.totalAmount * 100);
-    	$scope.campaignWidth = $scope.campaignWidth + '%';
-    	return {width: $scope.campaignWidth};
+    	return {width: $scope.getWidth(campaign)};
     };
 
     $scope.campaignTitles = ['dinero','bienes','materiales'];
