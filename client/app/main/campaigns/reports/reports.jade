@@ -1,0 +1,37 @@
+div(ng-include='"components/navbar/navbar.html"')
+.container
+  .row
+    .col-lg-12(class='centerColumn')
+      h1 Un techo para mi pais
+      h4 by TECHO
+      .col-lg-1
+      .col-lg-10(class='containerStyles')
+        .col-lg-9
+          .h2 Cantidad de Donaciones
+          .highchart(id='chart1', config='chartConfig')
+
+          .h2 Cantidad Recaudada
+          .highchart(id='chart2', config='chartConfig2')
+
+        .col-lg-3
+            h2 Duración
+            h4 21 de Septiembre
+            h4 hasta
+            h4 3 de Diciembre
+
+            h2 Dias
+            h4 71
+
+            h2 Donaciones
+            h4 45.123
+
+            h2 Requerido
+            h4 $100.000
+
+            h2 Recaudado
+            h4 $104.191
+
+            h2 Donacion promedio
+            h4 $2,30
+
+      .col-lg-1
