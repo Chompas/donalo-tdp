@@ -15,7 +15,7 @@ var CampaignSchema = new Schema({
   totalAmount: Number,
   currentAmount: Number,
   active: Boolean,
-  userId: String
+  user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 CampaignSchema.pre('save', function (next) {

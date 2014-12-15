@@ -13,16 +13,23 @@ exports.index = function(req, res) {
 
 // Get a single campaign
 exports.show = function(req, res) {
-  Campaign.findById(req.params.id, function (err, campaign) {
+
+  Campaign.findById(req.params.id).populate('user').exec(function (err, campaign) {
     if(err) { return handleError(res, err); }
     if(!campaign) { return res.send(404); }
-    return res.json(campaign);
+      return res.json(200,campaign);
   });
+
+
 };
 
 // Creates a new campaign in the DB.
 exports.create = function(req, res) {
+  var campaign = req.body;
+  campaign.user = req.user._id;
+
   Campaign.create(req.body, function(err, campaign) {
+
     if(err) { return handleError(res, err); }
     return res.json(201, campaign);
   });
