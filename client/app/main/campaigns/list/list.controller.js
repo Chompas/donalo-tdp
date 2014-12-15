@@ -15,7 +15,7 @@
 
         campaignsData.progress = function(campaign){
 
-          return (campaign.currentAmount / campaign.totalAmount)*100;
+          return Math.floor((campaign.currentAmount / campaign.totalAmount)*100);
         };
 
         var bounds = [];
