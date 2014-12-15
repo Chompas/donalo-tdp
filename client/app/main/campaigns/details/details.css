@@ -1,24 +1,27 @@
 .btn-warning.btn-lg.btn-block{
   backgorund-color:#ff8000;
   text-align:center;
-  margin-top:40px;
+  margin-top:10px;
 }
-.container .row .centerColumn{
+.centerColumn{
   text-align:center;
+  color: white;
+  padding: 10px 0px;
 }
 
-.container .row .containerStyles{
-  margin-right:0;
-  margin-left: 0;
+.containerStyles{
+  margin: 10px  80px;
   padding:30px;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #f16856;
+  border-color: #f16856;
   border-width: 1px;
   border-style: solid;
   border-radius: 4px 4px 0 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-  text-align:left;
+  text-align:center;
+  overflow: auto;
+  color: #ffba00;
 }
 
 .angular-google-map-container {
@@ -26,4 +29,87 @@
 }
 .centerColumn .progress .progress-bar {
   backgorund-color:#ff8000;
+}
+
+.img-wrapper img{
+
+  max-width: 600px;
+  max-height: 500px;
+}
+
+.address span{
+
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.containerStyles .donate-details h2{
+
+  margin: 0px;
+  font-weight: bold;
+}
+
+.containerStyles .donate-details div.recaudado{
+
+  text-align: center;
+  padding: 25px 25%;
+  background: #43c0b5;
+  margin-top: 10px;
+
+}
+
+.containerStyles span.recaudado{
+  display:block;
+  font-weight: bold;
+  color: #6a3e25;
+  font-size: 32px;
+}
+
+.containerStyles span.total{
+
+  display:block;
+  font-weight: bold;
+  color: #ffba00;
+  font-size: 32px;
+}
+
+.containerStyles .countdown{
+
+  background: #43c0b5;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.containerStyles .first-row{
+
+  overflow: hidden;
+}
+
+.containerStyles .line-div{
+
+  border-bottom: 1px solid;
+  padding: 10px;
+  color: white;
+}
+
+.containerStyles .second-row .campaign-text{
+
+  color: white;
+  font-size: 20px;
+  text-align: left;
+  padding: 10px 0px;
+}
+
+.containerStyles .expire-number{
+
+  display: block;
+  font-size: 50px;
+}
+
+.containerStyles .expire-text{
+
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
 }

@@ -22,18 +22,16 @@ angular.module('donaloTdpApp')
       } else {
         $scope.expire = hours + " horas " + minutes + " minutos ";
       }
+
+      data.percentageAmount = function(){
+
+        return (this.currentAmount/this.totalAmount)*100;
+      }
+
+
       $scope.campaign = data;
 
-      $.getJSON('http://maps.google.com/maps/api/geocode/json?address='+directions, function(data){
-        $scope.$apply(function(){
-          var location = data.results[0].geometry.location;
-          $scope.map  = { center: { latitude: location.lat, longitude: location.lng }, zoom: 18 };
-        });
-      });
+      $scope.map = {center: { latitude: campaign.coords.latitude, longitude: campaign.coords.longitude }, zoom: 15};
 
-      var user = User.show({id: data.userId});
-      user.$promise.then(function(userData){
-        $scope.user = userData;
-      });
     });
   });

@@ -1,30 +1,37 @@
-div(ng-include='"components/navbar/navbar.html"')
-.container
-  .row
-    .col-lg-12(class='centerColumn')
-      h1 {{campaign.name}}
-      h4 by {{user.name}}
-      .col-lg-1
-      .col-lg-10(class='containerStyles')
-        .col-lg-9
-          img.fit(alt='{{campaign.name}}', src='{{campaign.imageUrl}}')
-        .col-lg-3
+extends ./../../main.jade
+block content
+  .centerColumn
+    h1 {{campaign.name}}
+    h4 by {{campaign.user.name}}
+    .containerStyles
+      .first-row
+        .col-lg-7.img-wrapper
+          img.fit(alt='{{campaign.name}}', ng-src='{{campaign.imageUrl}}')
+        .col-lg-5.donate-details
           h2 #Backers
-          h4 Backers
-          h2 $00,000
-          h4 recaudado de $00,000
-          .progress
-            .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
-                span.sr-only 40% Complete
-          h2 {{expire}}
-          h4 para terminar la campaña
-
-          btn.btn-warning.btn-lg.btn-block(type='button') Doná
-        .col-lg-9
+          span Backers
+          .recaudado
+            span.recaudado Recaudado&nbsp;
+              span(ng-if="campaign.campaignType==0") $
+              {{campaign.currentAmount}}
+            span.total de&nbsp;
+              span(ng-if="campaign.campaignType==0") $
+              {{campaign.totalAmount}}
+            .progress
+              .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: {{campaign.percentageAmount()}}%;')
+                  span.sr-only {{campaign.percentageAmount()}} Complete
+            btn.btn-warning.btn-lg.btn-block(type='button') Doná
+          .countdown
+            span.expire-number {{expire}}
+            span.expire-text para terminar la campaña
+      .line-div
+      .second-row
+        .col-lg-7
           h2 Detalles de la campaña
-          p {{campaign.info}}
+          p.campaign-text {{campaign.info}}
 
-        .col-lg-3
+        .col-lg-5
           h2 Mapa
           ui-gmap-google-map(center='map.center', zoom='map.zoom')
-      .col-lg-1
+            ui-gmap-marker(coords='campaign.coords',idKey="marker-campaign._id")
+          .address <span>Direccion: </span>{{campaign.address}}
