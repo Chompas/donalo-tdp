@@ -4,16 +4,21 @@
     font-family: BebasNeue;
     src: url(/assets/fonts/BebasNeue_0.otf);
 }
+
+.bebasNeue {
+    font-family: BebasNeue;
+}
+
 @font-face {
     font-family: calibri;
     src: url(/fonts/calibri_0.ttf);
 }
 @font-face {
-    font-family: Calibri Bold;
+    font-family: Calibri-Bold;
     src: url(/fonts/Calibri Bold.ttf);
 }
 @font-face {
-    font-family: Calibri Italic;
+    font-family: Calibri-Italic;
     src: url(/fonts/Calibri Italic.ttf);
 }
 @font-face {
@@ -139,6 +144,10 @@
     color:#ffffff;
 }
 
+.centralText h1 , .centralText .listButton{
+    font-family: BebasNeue;
+}
+
 .campaignProgressBar {
     background-color:#f16856;
 }
@@ -157,6 +166,7 @@
     background-color: #43c0b5;
     border-color: #ffffff;
     color: #ffffff;
+    font-size: 22px;
 }
  
 .listButton:hover, 
@@ -197,4 +207,63 @@ fieldset[disabled] .listButton.active {
 .listButton .badge { 
   color: #43C0B5; 
   background-color: #ffffff; 
+}
+
+.donateButton { 
+  color: #FFFFFF; 
+  background-color: #6A3E25; 
+  border-color: #6A3E25;
+  font-size:19px;
+} 
+ 
+.donateButton:hover, 
+.donateButton:focus, 
+.donateButton:active, 
+.donateButton.active, 
+.open .dropdown-toggle.donateButton { 
+  color: #FFFFFF; 
+  background-color: #6A3E25; 
+  border-color: #6A3E25; 
+} 
+ 
+.donateButton:active, 
+.donateButton.active, 
+.open .dropdown-toggle.donateButton { 
+  background-image: none; 
+} 
+ 
+.donateButton.disabled, 
+.donateButton[disabled], 
+fieldset[disabled] .donateButton, 
+.donateButton.disabled:hover, 
+.donateButton[disabled]:hover, 
+fieldset[disabled] .donateButton:hover, 
+.donateButton.disabled:focus, 
+.donateButton[disabled]:focus, 
+fieldset[disabled] .donateButton:focus, 
+.donateButton.disabled:active, 
+.donateButton[disabled]:active, 
+fieldset[disabled] .donateButton:active, 
+.donateButton.disabled.active, 
+.donateButton[disabled].active, 
+fieldset[disabled] .donateButton.active { 
+  background-color: #6A3E25; 
+  border-color: #6A3E25; 
+} 
+ 
+.donateButton .badge { 
+  color: #6A3E25; 
+  background-color: #FFFFFF; 
+}
+
+/******************* CAMPAIGN *************************/
+
+.campaignTitle {
+    color: #afafaf;
+    font-size: 23px;
+}
+
+.campaignData {
+    color: #f16856;
+    font-size: 20px;
 }
