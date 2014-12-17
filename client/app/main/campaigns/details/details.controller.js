@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User) {
+  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal) {
 
     var campaign = Campaign.show({id: $routeParams.id});
     //$scope.map  = { center: { latitude: 54, longitude: -73 }, zoom: 8 };
@@ -30,6 +30,21 @@ angular.module('donaloTdpApp')
 
       $scope.campaign = data;
       $scope.map = {center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15};
+
+      $scope.currentCampaignId = "";
+
+      $scope.open = function(campaignId) {
+        $scope.currentCampaignId = campaignId;
+        var modalInstance = $modal.open({
+          templateUrl: 'components/donate/donate.html',
+          controller: 'DonateCtrl',
+          resolve: {
+            campaignId: function () {
+              return $scope.currentCampaignId;
+            }
+          }
+        });
+      }
 
     });
   });
