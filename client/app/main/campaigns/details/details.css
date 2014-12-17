@@ -125,3 +125,22 @@
 .borderImage {
   border: 5px #ffffff solid;
 }
+.backgroundWhite {
+  background-color: #ffffff;
+}
+.colorBrown {
+  color: #6A3E25;
+  font-weight: bold;
+  font-size:14px;
+  text-align:left;
+}
+.colorPink {
+  color: #f16856;
+  font-weight: bold;
+  font-size:16px;
+}
+.greyBox {
+  border:1px solid #cccccc;
+  background-color: #ECECEC;
+  margin:20px;
+}

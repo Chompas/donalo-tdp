@@ -5,33 +5,41 @@ block content
       .col-lg-2
       .col-lg-8
         .col-lg-5
-          img.fit(alt='{{campaign.name}}', src='{{campaign.imageUrl}}',width=350, class='borderImage')
+          img.fit(alt='{{campaign.name}}', src='{{campaign.imageUrl}}',width=300, class='borderImage')
         .col-lg-7.centralText
           h1 {{campaign.name}}
           h4 por {{user.name}}
 
           p {{campaign.info}}
           .row
-            .col-lg-8.paddingTop
+            .col-lg-7.paddingTop
               .progress
                 .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
                     span.sr-only 40% Complete
-            .col-lg-4
-              p RECAUDADO &nbsp; &nbsp; $00,00 de $00,00
+            .col-lg-5
+              p
+              .colorBrown RECAUDADO &nbsp; &nbsp;
+              .colorPink $00,00 de $00,00
           .row
             .col-lg-4
               button.col-md-12.donateButton.btn(type='button',ng-click="open(campaign._id)")| DONA!
       .col-lg-2
-    .col-lg-12
+    .col-lg-12.backgroundWhite
       .col-lg-1
       .col-lg-10
-        h2 #Backers
-          h4 Backers
-            h2 {{expire}}
+        .col-lg-1
+        .col-lg-5.greyBox
+          h2 ###
+          h4 Donaciones
+        .col-lg-5.greyBox
+          h2 {{expire}}
           h4 para terminar la campaña
+        .col-lg-1
+
       .col-lg-1
 
     .col-lg-12.list-page
-        h2 DIRECCION
+        .col-lg-1
+          h3.colorBrown DIRECCION
     .col-lg-12
         ui-gmap-google-map(center='map.center', zoom='map.zoom')
