@@ -15,7 +15,7 @@ block content
                 .recaudado
                   h4 RECAUDADO
                   .text $&nbsp;{{campaign.currentAmount}}
-                button(type="button",class="btn btn-default btn-lg",ng-click="go('/campaigns/donate/' + campaign._id)") DONÁ
+                button(type="button",class="btn btn-default btn-lg",ng-click="open(campaign._id)") DONÁ
                 button(type="button",class="btn btn-default contrast btn-lg",ng-click="go('/campaigns/details/' + campaign._id)") VER MÁS
                 .progress
                   .progress-bar(role="progressbar",aria-valuenow="{{campaigns.progress(campaign)}}",aria-valuemin="0",aria-valuemax=100,style="width: {{campaigns.progress(campaign)}}%") {{campaigns.progress(campaign)}}%

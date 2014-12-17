@@ -1,12 +1,28 @@
   'use strict';
 
   angular.module('donaloTdpApp')
-  .controller('ListCtrl', function ($scope, $http, $location, Campaign,uiGmapGoogleMapApi,$timeout) {
+  .controller('ListCtrl', function ($scope, $http, $location, Campaign,uiGmapGoogleMapApi,$timeout,$modal) {
 
     $scope.campaignType = ['Monetaria','Bienes','Voluntarios'];
     
     $scope.go = function ( path ) {
       $location.path( path );
+    };
+
+
+    $scope.currentCampaignId = "";
+
+    $scope.open = function(campaignId) {
+      $scope.currentCampaignId = campaignId;
+      var modalInstance = $modal.open({
+        templateUrl: 'components/donate/donate.html',
+        controller: 'DonateCtrl',
+        resolve: {
+          campaignId: function () {
+            return $scope.currentCampaignId;
+          }
+        }
+      });
     };
 
     var maps = [[],[],[]];

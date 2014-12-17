@@ -20,7 +20,8 @@ block content
             .progress
               .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: {{campaign.percentageAmount()}}%;')
                   span.sr-only {{campaign.percentageAmount()}} Complete
-            btn.btn-warning.btn-lg.btn-block(type='button') Doná
+            button.col-md-12.donateButton.btn(type='button',ng-click="open(campaign._id)")
+                  | DONA!
           .countdown
             span.expire-number {{expire}}
             span.expire-text para terminar la campaña
