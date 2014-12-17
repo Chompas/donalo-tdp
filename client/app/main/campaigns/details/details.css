@@ -134,6 +134,13 @@
   font-size:14px;
   text-align:left;
 }
+
+.colorWhite {
+  color: #ffffff;
+  font-weight: bold;
+  font-size:14px;
+  text-align:left;
+}
 .colorPink {
   color: #f16856;
   font-weight: bold;
@@ -143,4 +150,42 @@
   border:1px solid #cccccc;
   background-color: #ECECEC;
   margin:20px;
+}
+.greyBoxMini {
+  border:1px solid #cccccc;
+  background-color: #ECECEC;
+}
+.colorWhiteTitle {
+  color: #ffffff;
+  font-weight: bold;
+  font-size:22px;
+  text-align:left;
+  text-transform:uppercase;
+  margin-left:20px;
+}
+
+.colorBrownTitle {
+  color: #6A3E25;
+  font-weight: bold;
+  font-size:22px;
+  text-align:left;
+  text-transform:uppercase;
+  margin-left:20px;
+}
+.colorBrownBig {
+  color: #6A3E25;
+  font-weight: bold;
+  font-size:16px;
+  text-align:left;
+  padding-bottom:10px;
+  text-transform:uppercase;
+}
+
+.colorWhiteBig {
+  color: #ffffff;
+  font-weight: bold;
+  font-size:16px;
+  text-align:left;
+  padding-bottom:10px;
+  text-transform:uppercase;
 }

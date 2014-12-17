@@ -1,38 +1,57 @@
 extends ./../../main.jade
 block content
-  .list-page
-    .row
-      .col-lg-12(class='centerColumn')
-        h1 Un techo para mi pais
-        h4 by TECHO
-        .col-lg-1
-        .col-lg-10(class='containerStyles')
-          .col-lg-9
-            .h2 Cantidad de Donaciones
-            .highchart(id='chart1', config='chartConfig')
+  .row
+    .col-lg-12.list-page.paddingValues
+      .col-lg-2
+      .col-lg-8
+        .col-lg-5
+          img.fit(alt='UN TECHO PARA MI PAIS', src='http://localhost:9000/assets/images/hand.png',width=150, class='borderImage')
+        .col-lg-7.centralText
+          h1 UN TECHO PARA MI PAIS
+          h4 por TECHO
 
-            .h2 Cantidad Recaudada
-            .highchart(id='chart2', config='chartConfig2')
+          p lalal alala alaala lalala
+      .col-lg-2
+    .col-lg-12.backgroundWhite
+          .col-lg-1
+          .col-lg-2.greyBox
+            h4 21 de Septiembre a
+            h4 3 de Diciembre
+            h5 Duracion
+          .col-lg-2.greyBox
+            h4 71
+            h5 Días
+          .col-lg-2.greyBox
+            h4 45.123
+            h5 Donaciones
 
-          .col-lg-4
-              h2 Duración
-              h4 21 de Septiembre
-              h4 hasta
-              h4 3 de Diciembre
+          .col-lg-2.greyBox
+            h4 $100.000
+            h5 Requerido
+          .col-lg-1
+          .col-lg-2.greyBox
+            h4 $104.191
+            h5 Recaudado
+          .col-lg-2.greyBox
+            h4 $2,30
+            h5 Donacion promedio
+    .col-lg-12
+      h2.colorWhiteTitle Estadisticas Mensuales
+      .col-lg-6
+        .h4.colorWhiteBig Cantidad de Donaciones
 
-              h2 Dias
-              h4 71
+        .highchart(id='chart1', config='chartConfig')
+      .col-lg-6
+        .h4.colorWhiteBig Cantidad Recaudada
 
-              h2 Donaciones
-              h4 45.123
+        .highchart(id='chart2', config='chartConfig2')
+    .col-lg-12.list-page
+      h2.colorBrownTitle Estadisticas Diarias
+      .col-lg-6
+        .h4.colorBrownBig Cantidad de Donaciones
 
-              h2 Requerido
-              h4 $100.000
+        .highchart(id='chart1', config='chartConfig')
+      .col-lg-6
+        .h4.colorBrownBig Cantidad Recaudada
 
-              h2 Recaudado
-              h4 $104.191
-
-              h2 Donacion promedio
-              h4 $2,30
-
-        .col-lg-1
+        .highchart(id='chart2', config='chartConfig2')
