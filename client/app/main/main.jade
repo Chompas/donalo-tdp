@@ -36,15 +36,28 @@ div(ng-include='"components/navbar/navbar.html"')
                   .row(ng-switch-when="0") {{campaign.totalAmount | currency:undefined:0}}
                   .row(ng-switch-default) {{campaign.totalAmount}}
                   .row
-                    button.col-md-12.donateButton.btn(type='button',ng-click="go('/campaigns/donate/{{campaign._id}}')")
+                    button.col-md-12.donateButton.btn(type='button',ng-click="open(campaign._id)")
                       | DONA!
           .row
             .progress.progressBarContainer
                 .progress-bar.campaignProgressBar(ng-style='setWidth(campaign)', aria-valuemax='100', aria-valuemin='0', aria-valuenow='{{(campaign.currentAmount + 20) / campaign.totalAmount * 100 | number:0}}', role='progressbar')
                   | {{getWidth(campaign)}}
 
-
 footer.footer
   .container
     span
       | Copyright © 2014
+
+div(ng-controller="ModalDemoCtrl")
+  script(type='text/ng-template', id='myModalContent.html').
+    <div class="modal-header">
+      <h3 class="modal-title">¿Cuánto querés donar?</h3>
+    </div>
+    <div class="modal-body">
+      <input type="text" name="" ng-model="donationAmount">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="donate()">OK</button>
+      <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+    <div ng-model="label"></div>

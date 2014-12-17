@@ -1,9 +1,13 @@
   'use strict';
 
   angular.module('donaloTdpApp')
-  .controller('ListCtrl', function ($scope, $http, Campaign,uiGmapGoogleMapApi,$timeout) {
+  .controller('ListCtrl', function ($scope, $http, $location, Campaign,uiGmapGoogleMapApi,$timeout) {
 
     $scope.campaignType = ['Monetaria','Bienes','Voluntarios'];
+    
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
 
     var maps = [[],[],[]];
 

@@ -18,7 +18,7 @@ var CampaignSchema = new Schema({
   user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-CampaignSchema.pre('save', function (next) {
+/*CampaignSchema.pre('save', function (next) {
 
   var gm = require('geocoder');
   var self = this;
@@ -35,6 +35,6 @@ CampaignSchema.pre('save', function (next) {
     next();
   });
 
-});
+});*/
 
 module.exports = mongoose.model('Campaign', CampaignSchema);
