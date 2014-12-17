@@ -1,0 +1,8 @@
+.modal-header
+    h3.modal-title ¿Cuánto querés donar?
+  .modal-body
+    input(type="text",name="",ng-model="donationAmount")
+  .modal-footer
+    button.btn.btn-primary(ng-click="donate()") OK
+    button.btn.btn-warning(ng-click="cancel()") Cancel
+  div(ng-model="label")

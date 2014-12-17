@@ -36,8 +36,8 @@ angular.module('donaloTdpApp')
     $scope.open = function(campaignId) {
       $scope.currentCampaignId = campaignId;
       var modalInstance = $modal.open({
-        templateUrl: 'myModalContent.html',
-        controller: 'ModalInstanceCtrl',
+        templateUrl: 'components/donate/donate.html',
+        controller: 'DonateCtrl',
         resolve: {
           campaignId: function () {
             return $scope.currentCampaignId;
@@ -57,32 +57,5 @@ angular.module('donaloTdpApp')
         });
       }
     }
-  })
-
-  .controller('ModalDemoCtrl', function ($scope, $modal, $log) {
-
-  })
-
-// Please note that $modalInstance represents a modal window (instance) dependency.
-// It is not the same as the $modal service used above.
-
-  .controller('ModalInstanceCtrl', function ($scope, $modalInstance, campaignId, Campaign) {
-    $scope.campaignId = campaignId;
-    $scope.ok = function () {
-      $scope.donate($scope.campaignId);
-    };
-
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
-    };
-
-    $scope.donate = function() {
-      var campaign = Campaign.show({id:$scope.campaignId});
-      campaign.$promise.then(function(data){
-        var newCurrentAmount = parseInt($scope.donationAmount) + parseInt(data.currentAmount);
-        Campaign.update({id:$scope.campaignId},{currentAmount:newCurrentAmount});
-        $modalInstance.close();
-      });
-    };
-  })
+  });
 
