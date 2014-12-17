@@ -29,6 +29,8 @@ angular.module('donaloTdpApp')
       }
 
       $scope.campaign = data;
+      var campaignType = ['Dinero','Materiales','Voluntarios'];
+      $scope.campaign.tipo = campaignType[data.campaignType];
       $scope.map = {center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15};
 
       $scope.currentCampaignId = "";

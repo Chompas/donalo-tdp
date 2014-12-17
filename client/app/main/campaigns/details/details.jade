@@ -13,8 +13,8 @@ block content
           p {{campaign.info}}
           .row
             .col-lg-7.paddingTop
-              .progress
-                .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
+              .progress.progressBarContainer
+                .progress-bar.campaignProgressBar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
                     span.sr-only 40% Complete
             .col-lg-5
               p
@@ -24,7 +24,8 @@ block content
             .col-lg-4
               button.col-md-12.donateButton.btn(type='button',ng-click="open(campaign._id)")| DONA!
       .col-lg-2
-    .col-lg-12.backgroundWhite
+          img.fit(alt='{{campaign.tipo}}', src='/assets/images/{{campaign.tipo}}.png', width=100)
+     .col-lg-12.backgroundWhite
       .col-lg-1
       .col-lg-10
         .col-lg-1

@@ -189,3 +189,12 @@
   padding-bottom:10px;
   text-transform:uppercase;
 }
+
+.campaignProgressBar {
+  background-color:#f16856;
+}
+
+.progressBarContainer {
+  background-color: #ffba00;
+  height: 20px;
+}
