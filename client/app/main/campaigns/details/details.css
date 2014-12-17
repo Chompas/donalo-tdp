@@ -198,3 +198,11 @@
   background-color: #ffba00;
   height: 20px;
 }
+.linkReporte {
+  color: #f16856;
+  font-weight: bold;
+  font-size:16px;
+  text-decoration:underline;
+  float:right;
+  padding-right:20px;
+}
