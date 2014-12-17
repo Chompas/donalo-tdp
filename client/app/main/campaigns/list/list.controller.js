@@ -18,46 +18,12 @@
           return Math.floor((campaign.currentAmount / campaign.totalAmount)*100);
         };
 
-        var bounds = [];
-        var markers = [];
+        angular.forEach(campaignsData,function(value){
 
-        angular.forEach(campaignsData,function(campaignValue,campaignKey){
-
-          if (!(campaignValue.campaignType in bounds)){
-
-            bounds[campaignValue.campaignType] = new google.maps.LatLngBounds();
-            markers[campaignValue.campaignType] = [];
-          }
-
-          var latlng = new google.maps.LatLng(campaignValue.coords.latitude, campaignValue.coords.longitude);
-
-          bounds[campaignValue.campaignType].extend(latlng);
-
-          markers[campaignValue.campaignType].push( {
-            coords:{
-              latitude: campaignValue.coords.latitude,
-              longitude: campaignValue.coords.longitude
-            },
-            id: 'marker-'+ campaignKey
-          });
-
+          $scope[value._id] = {};
         });
-
-        $scope.markers = markers;
 
         $scope.campaigns = campaignsData;
-
-        var map = [];
-        angular.forEach($scope.campaignType,function(value,key){
-
-          if ((key in bounds)){
-            map[key] = {center: { latitude: bounds[key].getCenter().lat(), longitude: bounds[key].getCenter().lng() }, zoom: 10};
-
-          }
-
-        });
-
-        $scope.maps = map;
 
         $scope.active = function(index){
 

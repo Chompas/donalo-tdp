@@ -1,24 +1,28 @@
 extends ./../../main.jade
 block content
-  .tab-wrapper
-    tabset
-      tab(ng-repeat="tipo in campaignType", heading="{{tipo}}" select='active($index)')
-        .campaign-wrapper
+  .list-page
+    .list.tab-wrapper
+      tabset
+        tab(ng-repeat="tipo in campaignType", heading="{{tipo}}" select='active($index)')
           .row.campaign-list(ng-repeat="campaign in campaigns | filter:{campaignType:$index}")
-            .col-border.col-md-6
+            .col-border.col-md-4
               .img-wrapper
                 a(href="/campaigns/details/{{campaign._id}}")
                   img(ng-src="{{campaign.imageUrl}}")
-              .progress
-                .progress-bar(role="progressbar",aria-valuenow="{{campaigns.progress(campaign)}}",aria-valuemin="0",aria-valuemax=100,style="width: {{campaigns.progress(campaign)}}%") {{campaigns.progress(campaign)}}%
-              .descripcion {{campaign.name}}
-            .col-md-3.donacion-info-wrapper
+            .col-md-4
               .donacion-info
-                span.recaudado ${{campaign.currentAmount}}
-                span.tope de ${{campaign.totalAmount}}
-            .col-md-3.donar
-              button(type="button",class="btn btn-warning btn-lg") Doná
-          .row.campaign-list.empty(ng-hide="(campaigns | filter:{campaignType: $index}).length") No hay campañas de este tipo
-        .maps
-          ui-gmap-google-map(id='maps-{{$index}}',zoom='maps[$index].zoom',center='maps[$index].center')
-            ui-gmap-markers(models="markers[$index]", coords="'coords'",idkey="'id'")
+                h3 {{campaign.name}}
+                .recaudado
+                  h4 RECAUDADO
+                  .text $&nbsp;{{campaign.currentAmount}}
+                button(type="button",class="btn btn-default btn-lg") DONÁ
+                button(type="button",class="btn btn-default contrast btn-lg") VER MÁS
+                .progress
+                  .progress-bar(role="progressbar",aria-valuenow="{{campaigns.progress(campaign)}}",aria-valuemin="0",aria-valuemax=100,style="width: {{campaigns.progress(campaign)}}%") {{campaigns.progress(campaign)}}%
+            .col-md-4.maps
+                .maps
+                  ui-gmap-google-map(control='campagin._id',zoom='10',center='campaign.coords')
+                    ui-gmap-marker(coords='campaign.coords',idkey='campaign._id')
+            .descripcion
+              h3 DESCRIPCIÓN DE LA PUBLICACIÓN
+              .text {{campaign.info}}

@@ -1,23 +1,67 @@
-.tab-wrapper{
+.list-page{
 
-  margin: 0 0 0 16px;
+  background: #FFDD61;
+}
+
+.list.tab-wrapper{
+
   padding: 20px 0px;
+  width: 80%;
+  margin: 0 10%;
+  position: relative;
 
 }
 
-.tab-wrapper .nav-tabs a{
+.list.tab-wrapper .nav-tabs{
 
-    background: #ffba00;
-    color: white;
+  border: 0px;
+
+}
+
+.list.tab-wrapper ul.nav-tabs{
+
+  width: 98%;
+  margin: 0 1%;
+  position: relative;
+  z-index: 1
+
+}
+.list.tab-wrapper .nav-tabs > li{
+
+  margin: 0px 5px 0px 0px;
+
+}
+
+.list.tab-wrapper .nav-tabs > li.active a{
+
+  padding: 15px 25px 2px 25px;
+  margin-bottom: 0px;
+  top: 0px;
+
+}
+
+.list.tab-wrapper .nav-tabs a{
+
+    background: #ffffff;
+    border: 1px solid #C5C4BF;
+    border-bottom: 0px;
+    color: #F16858;
     font-weight: bold;
-}
-
-.tab-wrapper .tab-content{
-
-  border: 0px solid white;
+    font-size: 18px;
+    top: 7px;
+    padding: 10px 15px 3px 15px;
 
 }
-.campaign-wrapper{
+
+.list.tab-wrapper .tab-content{
+
+  border: 1px #C5C4BF solid;
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+}
+.list .campaign-wrapper{
 
   display: inline-block;
   width: 40%;
@@ -25,76 +69,84 @@
 
 }
 
-.campaign-list{
+.list .campaign-list{
 
-  border: 1px solid #f16856;
-  height: 215px;
-  margin: 5px 0px;
-  background: #f16856;
+  height: 270px;
+  background: #FFFFFF;
+  margin: 10px 20px;
+  border-bottom: 1px solid;
+  border-color: #C5C4BF;
+  padding: 15px 0px;
 }
 
-.campaign-list.empty{
+.list .campaign-list.empty{
 
   line-height: 120px;
   text-align: center;
   border: 0px;
 }
 
-.campaign-list .img-wrapper{
+.list .campaign-list .img-wrapper{
 
-  width: 100%;
-  margin: 10px 0px;
+  width: 300px;
+  height: 160px;
+  line-height: 152px;
+  padding: 2px;
+  margin: 5px 0px;
+  border: 1px solid #D9D1C6;
   text-align: center;
+  vertical-align: middle;
 }
 
-.campaign-list .img-wrapper img{
-  max-width: 150px;
-  max-height: 100px;
-  margin: 10px 20px;
+.list .campaign-list .img-wrapper img{
+  max-width: 294px;
+  max-height: 154px;
 }
 
-.campaign-list .progress{
-  margin: 10px 20px;
-
+.list .campaign-list .progress{
+  margin: 5px 0px;
+  background: #FFB900;
+  height: 22px;
 }
 
-.campaign-list .progress-bar{
+.list .campaign-list .progress .progress-bar{
 
-  width: 60%;
-
+  background: #F16856;
+  font-weight: bold;
 }
 
-.tab-pane .maps{
 
-  width: 58%;
+.list .tab-pane .maps{
+
+  width: 300px;
+  height: 160px;
   margin: 5px 10px 10px;
   display: inline-block;
   vertical-align: top;
-  min-height: 800px;
 }
 
-.maps .angular-google-map-container {
+.list .maps .angular-google-map-container {
   width: 100%;
-  height: 1075px;
+  height: 160px;
 }
 
-.campaign-wrapper .donacion-info{
+.list .campaign-list .donacion-info{
 
-  margin: 60px 0px;
-  text-align: center;
+  text-align: left;
 
 }
 
-.donacion-info .recaudado{
+.list .donacion-info .recaudado{
 
   display: block;
   font-weight: bold;
   font-size: 40px;
   color: #6a3e25;
+  line-height: 30px;
 
 }
 
-.donacion-info .tope{
+.list .donacion-info .tope{
 
   display: block;
   font-weight: bold;
@@ -103,17 +155,74 @@
 
 }
 
-.campaign-list .descripcion{
-  width: 100%;
-  margin: 10px 0px;
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
+.list .campaign-list .descripcion{
 
+    top: 10px;
+    left: 15px;
+    position: relative;
+    height: 60px;
+    display: block;
+    clear: both;
+    text-align: left;
+}
+
+.list .campaign-list .descripcion h3{
+
+  color: #693F26;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.list .campaign-list .descripcion .text{
+  color: #9F9F9F;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.list .campaign-list .donacion-info .btn.btn-default{
+
+  background: #6A3E25;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 6px 20px;
+  margin: 5px 10px 10px 0px;
+}
+
+.list .campaign-list .donacion-info .btn.btn-default.contrast{
+
+  border: 4px #6A3E25 solid;
+  background: #FFFFFF;
+  color: #6A3E25;
+  font-weight: bold;
+  padding: 3px 14px;
 
 }
 
-.campaign-wrapper .donar{
+.list .campaign-list .donacion-info{
 
-  line-height: 215px;
+  height: 160px;
+}
+
+.list .campaign-list .donacion-info h3{
+  margin: 5px 0px 0px;
+  color: #9F9F9F;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+.list .campaign-list .donacion-info .recaudado h4{
+
+    margin: 1px 0px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.donacion-info .recaudado .text{
+
+    margin: 1px 0px;
+    font-weight: bold;
+    color: #F16858;
+    font-size: 25px;
+    letter-spacing: 1px;
 }
