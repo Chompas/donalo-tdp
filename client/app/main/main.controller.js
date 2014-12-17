@@ -7,12 +7,6 @@ angular.module('donaloTdpApp')
   	$scope.campaigns.push(RandomCampaign.randomCampaign({type:1}));
   	$scope.campaigns.push(RandomCampaign.randomCampaign({type:2}));
 
-    // HARCODED IMAGES!!!!!
-    $scope.campaigns[0].imageUrl = "dona_icon3.png";
-    $scope.campaigns[1].imageUrl = "dona_icon.png";
-    $scope.campaigns[2].imageUrl = "dona_icon2.png";
-
-
     $scope.getWidth = function (campaign) {
       return (campaign.currentAmount / campaign.totalAmount * 100) + '%';
     }

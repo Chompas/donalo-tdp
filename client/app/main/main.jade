@@ -24,13 +24,15 @@ header#banner.hero-unit.content
         .row.featureCampaignData
           .col-md-7(style="height:100%;")
             .row(style="height:100%;")
-              img.fit.img-responsive.campaignThumbnail(alt='{{campaign.name}}', ng-src='{{"assets/images/" + campaign.imageUrl}}', err-src="assets/images/dona_icon.png")
+              img.fit.img-responsive.campaignThumbnail(alt='{{campaign.name}}', ng-src='{{"assets/images/tipo" + campaign.campaignType + ".png"}}')
           .col-md-5
-            .row
+            .row(ng-switch="campaign.campaignType")
               .row {{campaign.name}}
-              .row {{campaign.currentAmount | currency:undefined:0}}
+              .row(ng-switch-when="0") {{campaign.currentAmount | currency:undefined:0}}
+              .row(ng-switch-default) {{campaign.currentAmount}}
               .row de
-              .row {{campaign.totalAmount | currency:undefined:0}}
+              .row(ng-switch-when="0") {{campaign.totalAmount | currency:undefined:0}}
+              .row(ng-switch-default) {{campaign.totalAmount}}
         .row
           .progress.progressBarContainer
               .progress-bar.campaignProgressBar(ng-style='setWidth(campaign)', aria-valuemax='100', aria-valuemin='0', aria-valuenow='{{(campaign.currentAmount + 20) / campaign.totalAmount * 100 | number:0}}', role='progressbar')
