@@ -1,0 +1,14 @@
+.containerStyles{
+  margin: 10px  80px;
+  padding:30px;
+  background-color: #ffffff;
+  border-color: #f16856;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align:center;
+  overflow: auto;
+  color: #000000;
+}

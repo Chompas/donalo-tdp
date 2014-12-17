@@ -28,10 +28,8 @@ angular.module('donaloTdpApp')
         return (this.currentAmount/this.totalAmount)*100;
       }
 
-
       $scope.campaign = data;
-
-      $scope.map = {center: { latitude: campaign.coords.latitude, longitude: campaign.coords.longitude }, zoom: 15};
+      $scope.map = {center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15};
 
     });
   });

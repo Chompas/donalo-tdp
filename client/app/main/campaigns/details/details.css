@@ -113,3 +113,15 @@
   font-size: 20px;
   font-weight: bold;
 }
+.paddingValues{
+  padding:30px;
+}
+.paddingTop {
+  padding-top:20px;
+}
+.paddingValues .centralText {
+  padding-left:50px;
+}
+.borderImage {
+  border: 5px #ffffff solid;
+}
