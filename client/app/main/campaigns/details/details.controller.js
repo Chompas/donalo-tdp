@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal) {
+  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal,$location) {
 
     var campaign = Campaign.show({id: $routeParams.id});
     //$scope.map  = { center: { latitude: 54, longitude: -73 }, zoom: 8 };
@@ -28,10 +28,29 @@ angular.module('donaloTdpApp')
         return (this.currentAmount/this.totalAmount)*100;
       }
 
+      $scope.marker = {}
+      
+      $scope.infowindow = new google.maps.InfoWindow({content: campaign.address});
+
+      $scope.marker.events = {
+        'click' : function(marker,eventName,args){
+
+          var scope = angular.element('.angular-google-map-container').scope();
+
+          if (!$scope.infowindow.isOpen()){
+
+            $scope.infowindow.open(scope.map,marker);
+          }else{
+
+            $scope.infowindow.close();
+          }
+        }
+      }
+
       $scope.campaign = data;
       var campaignType = ['Dinero','Materiales','Voluntarios'];
       $scope.campaign.tipo = campaignType[data.campaignType];
-      $scope.map = {center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15};
+      $scope.map = {center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15, options: {draggable: false}};
 
       $scope.currentCampaignId = "";
 
@@ -46,6 +65,11 @@ angular.module('donaloTdpApp')
             }
           }
         });
+      }
+
+      $scope.go= function(path){
+
+        $location.path(path);
       }
 
     });

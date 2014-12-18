@@ -21,8 +21,9 @@ block content
               .colorBrown RECAUDADO &nbsp; &nbsp;
               .colorPink $00,00 de $00,00
           .row
-            .col-lg-4
-              button.col-md-12.donateButton.btn(type='button',ng-click="open(campaign._id)")| DONA!
+            .col-lg-8.details-buttons
+                button.donateButton.btn(type='button',ng-click="open(campaign._id)")| DONA!
+                button.reportButton.btn(type='button',ng-click="go('/campaigns/reports')")| VER REPORTE
       .col-lg-2
           img.fit(alt='{{campaign.tipo}}', src='/assets/images/tipo{{campaign.campaignType}}.png', width=100)
      .col-lg-12.backgroundWhite
@@ -43,6 +44,5 @@ block content
         .col-lg-1
           h3.colorBrown DIRECCION
     .col-lg-12
-        ui-gmap-google-map(center='map.center', zoom='map.zoom')
-    .col-lg-12.list-page
-        a.linkReporte(href='/campaigns/reports') Ver reporte
+        ui-gmap-google-map(center='map.center', zoom='map.zoom', options='map.options')
+          ui-gmap-marker(coords='campaign.coords',idkey='campaign._id',events='marker.events')

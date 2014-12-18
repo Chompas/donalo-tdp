@@ -206,3 +206,15 @@
   float:right;
   padding-right:20px;
 }
+
+
+.details-buttons .reportButton{
+
+  border: 4px #6A3E25 solid;
+  background: #FFFFFF;
+  color: #6A3E25;
+  font-weight: bold;
+  padding: 3px 3px;
+  margin-left: 3%;
+  font-size: 19px;
+}
