@@ -15,6 +15,7 @@ var CampaignSchema = new Schema({
   totalAmount: Number,
   currentAmount: Number,
   active: Boolean,
+  donationsCount: Number,
   user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 

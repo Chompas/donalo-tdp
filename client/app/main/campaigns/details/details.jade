@@ -31,7 +31,8 @@ block content
       .col-lg-10
         .col-lg-1
         .col-lg-5.greyBox
-          h2 ###
+          h2(ng-if="campaign.donationsCount != 0") {{campaign.donationsCount}}
+          h2(ng-if="campaign.donationsCount == 0 || campaign.donationsCount == null") 0
           h4 Donaciones
         .col-lg-5.greyBox
           h2 {{expire}}

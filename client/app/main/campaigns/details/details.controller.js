@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal,$location) {
+  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal, $location) {
 
     var campaign = Campaign.show({id: $routeParams.id});
     //$scope.map  = { center: { latitude: 54, longitude: -73 }, zoom: 8 };
