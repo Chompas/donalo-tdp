@@ -24,8 +24,7 @@ block content
                   .progress-bar(role="progressbar",aria-valuenow="{{campaigns.progress(campaign)}}",aria-valuemin="0",aria-valuemax=100,style="width: {{campaigns.progress(campaign)}}%") {{campaigns.progress(campaign)}}%
             .col-md-4.maps
                 .maps
-                  ui-gmap-google-map(control='campagin._id',zoom='10',center='campaign.coords')
-                    ui-gmap-marker(coords='campaign.coords',idkey='campaign._id')
+                    img(ng-src="/assets/images/listMap.png")
             .descripcion
               h3 DESCRIPCIÓN DE LA PUBLICACIÓN
               .text {{campaign.info}}
