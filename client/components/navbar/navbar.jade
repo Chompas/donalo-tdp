@@ -16,6 +16,8 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
 
         li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
           a(href='/admin') Admin
+        li(ng-show='!isAdmin() && isLoggedIn()', ng-class='{active: isActive("/admin/addCampaign")}')
+          a(href='/admin/addCampaign') Crear Campaña
 
       .col-sm-5.col-md-5
           form.navbar-form(name='searchForm', role='search', ng-submit='search(searchForm)')

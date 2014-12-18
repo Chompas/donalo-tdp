@@ -38,6 +38,8 @@ div(ng-include='"components/navbar/navbar.html"')
                   .row
                     button.col-md-12.donateButton.btn(type='button',ng-click="open(campaign._id)")
                       | DONA!
+                  .row
+                    &nbsp;
           .row
             .progress.progressBarContainer
                 .progress-bar.campaignProgressBar(ng-style='setWidth(campaign)', aria-valuemax='100', aria-valuemin='0', aria-valuenow='{{(campaign.currentAmount + 20) / campaign.totalAmount * 100 | number:0}}', role='progressbar')

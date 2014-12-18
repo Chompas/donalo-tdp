@@ -3,8 +3,8 @@
   angular.module('donaloTdpApp')
   .controller('ListCtrl', function ($scope, $http, $location, Campaign,uiGmapGoogleMapApi,$timeout,$modal) {
 
-    $scope.campaignType = ['Monetaria','Bienes','Voluntarios'];
-    
+    $scope.campaignType = ['Dinero','Materiales','Voluntarios'];
+
     $scope.go = function ( path ) {
       $location.path( path );
     };
