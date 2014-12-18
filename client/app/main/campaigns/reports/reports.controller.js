@@ -79,7 +79,7 @@ angular.module('donaloTdpApp')
       var values = [];
       while (dividend> 0 && divisor > 0)
         {
-          var a = Math.round(dividend/ divisor / multiple) * multiple;
+          var a = Math.round(dividend/ divisor / Math.random());
           dividend -= a;
           divisor--;
           values.push(a);
