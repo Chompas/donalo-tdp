@@ -172,6 +172,16 @@
   text-transform:uppercase;
   margin-left:20px;
 }
+
+.colorBlackTitle {
+  color: #000000;
+  font-weight: bold;
+  font-size:22px;
+  text-align:left;
+  text-transform:uppercase;
+  margin-left:20px;
+}
+
 .colorBrownBig {
   color: #6A3E25;
   font-weight: bold;
