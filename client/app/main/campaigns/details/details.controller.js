@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('donaloTdpApp')
-  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal,$location) {
+  .controller('DetailsCtrl', function ($scope, $http, $routeParams, Campaign, User, $modal, $location) {
 
     var campaign = Campaign.show({id: $routeParams.id});
     //$scope.map  = { center: { latitude: 54, longitude: -73 }, zoom: 8 };
@@ -71,6 +71,14 @@ angular.module('donaloTdpApp')
 
         $location.path(path);
       }
+
+      $scope.getWidth = function (campaign) {
+        return (campaign.currentAmount / campaign.totalAmount * 100).toFixed(0) + '%';
+      }
+
+      $scope.setWidth = function (campaign) {
+        return {width: $scope.getWidth(campaign)};
+      };
 
     });
   });

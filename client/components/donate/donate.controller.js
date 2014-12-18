@@ -15,7 +15,11 @@ angular.module('donaloTdpApp')
       var campaign = Campaign.show({id:$scope.campaignId});
       campaign.$promise.then(function(data){
         var newCurrentAmount = parseInt($scope.donationAmount) + parseInt(data.currentAmount);
-        Campaign.update({id:$scope.campaignId},{currentAmount:newCurrentAmount});
+        var newCount = 1;
+        if(data.donationsCount != null) {
+          newCount = parseInt(data.donationsCount) + 1;          
+        }
+        Campaign.update({id:$scope.campaignId},{currentAmount:newCurrentAmount, donationsCount:newCount});
         //$location.path( '' );
         $modalInstance.close();
       });
