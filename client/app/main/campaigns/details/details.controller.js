@@ -8,7 +8,11 @@ angular.module('donaloTdpApp')
     campaign.$promise.then(function(data){
       var expire = new Date(data.expires);
       var now = new Date();
-      var diff =  Math.abs(expire - now);
+      var diff =  expire - now;
+      if(diff<0)
+          diff = 0;
+      else
+          diff= Math.abs(diff);
       var directions = (data.address).replace(' ','+');
       var seconds = Math.floor(diff/1000); //ignore any left over units smaller than a second
       var minutes = Math.floor(seconds/60);
@@ -17,7 +21,7 @@ angular.module('donaloTdpApp')
       var hours = Math.floor(minutes/60);
       minutes = minutes % 60;
 
-      if(Math.floor(hours/24)>0) {
+      if(Math.floor(hours/24)>=0) {
         $scope.expire = Math.floor(hours/24) + " dias";
       } else {
         $scope.expire = hours + " horas " + minutes + " minutos ";
@@ -29,7 +33,7 @@ angular.module('donaloTdpApp')
       }
 
       $scope.marker = {}
-      
+
       $scope.infowindow = new google.maps.InfoWindow({content: campaign.address});
 
       $scope.marker.events = {
