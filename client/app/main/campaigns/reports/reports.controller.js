@@ -72,9 +72,9 @@ angular.module('donaloTdpApp')
       },
       loading: false,
       size: {}
-    }
+    };
 
-
+    
     $scope.reflow = function () {
       $scope.$broadcast('highchartsng.reflow');
     };
