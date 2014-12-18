@@ -32,6 +32,11 @@ angular.module('donaloTdpApp')
         return (this.currentAmount/this.totalAmount)*100;
       }
 
+      var user = User.show({id: data.user._id});
+      user.$promise.then(function(userData){
+        $scope.user = userData;
+      });
+
       $scope.marker = {}
 
       $scope.infowindow = new google.maps.InfoWindow({content: campaign.address});
@@ -51,7 +56,9 @@ angular.module('donaloTdpApp')
         }
       }
 
+
       $scope.campaign = data;
+
       var campaignType = ['Dinero','Materiales','Voluntarios'];
       $scope.campaign.tipo = campaignType[data.campaignType];
       $scope.map = {center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15, options: {draggable: false}};
