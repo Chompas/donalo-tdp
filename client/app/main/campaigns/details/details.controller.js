@@ -72,5 +72,13 @@ angular.module('donaloTdpApp')
         $location.path(path);
       }
 
+      $scope.getWidth = function (campaign) {
+        return (campaign.currentAmount / campaign.totalAmount * 100).toFixed(0) + '%';
+      }
+
+      $scope.setWidth = function (campaign) {
+        return {width: $scope.getWidth(campaign)};
+      };
+
     });
   });

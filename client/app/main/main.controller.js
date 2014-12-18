@@ -8,7 +8,7 @@ angular.module('donaloTdpApp')
   	$scope.campaigns.push(RandomCampaign.randomCampaign({type:2}));
 
     $scope.getWidth = function (campaign) {
-      return (campaign.currentAmount / campaign.totalAmount * 100) + '%';
+      return (campaign.currentAmount / campaign.totalAmount * 100).toFixed(0) + '%';
     }
 
     $scope.setWidth = function (campaign) {
